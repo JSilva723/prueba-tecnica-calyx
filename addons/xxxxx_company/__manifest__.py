@@ -9,6 +9,7 @@
     'depends': [
         'base',
         'sale',
+        'stock',
     ],
     'data': [
         'security/ir.model.access.csv',

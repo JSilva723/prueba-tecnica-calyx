@@ -8,6 +8,7 @@
                 <tree>
                     <field name="code"/>
                     <field name="name"/>
+                    <field name="warehouse_id"/>
                 </tree>
             </field>
         </record>
@@ -20,6 +21,7 @@
                     <group>
                         <field name="code" readonly="1"/>
                         <field name="name"/>
+                        <field name="warehouse_id"/>
                     </group>
                 </form>
             </field>
