@@ -19,12 +19,17 @@
             <field name="model">xxxxx_company.channels_of_sale</field>
             <field name="arch" type="xml">
                 <form string="Channels of Sale">
-                    <group>
-                        <field name="code" readonly="1"/>
-                        <field name="name"/>
-                        <field name="warehouse_id"/>
-                        <field name="account_journal_id"/>
-                    </group>
+                    <sheet>
+                        <group>
+                            <field name="code" readonly="1"/>
+                            <field name="name"/>
+                            <field name="warehouse_id"/>
+                            <field name="account_journal_id"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
                 </form>
             </field>
         </record>

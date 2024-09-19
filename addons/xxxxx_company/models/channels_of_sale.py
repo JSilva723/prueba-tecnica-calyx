@@ -4,8 +4,9 @@ from odoo import models, fields, api, _
 class ChannelsOfSale(models.Model):
     _name = 'xxxxx_company.channels_of_sale'
     _description = 'xxxxx_company.channels_of_sale'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    name = fields.Char(string=_('Name'), required=True)
+    name = fields.Char(string=_('Name'), required=True, track_visibility='onchange')
     code = fields.Char(string=_('Code'), readonly=True, copy=False, default='New')
     warehouse_id = fields.Many2one('stock.warehouse', string=_('Warehouse'))
     account_journal_id = fields.Many2one('account.journal', string=_('Journal'))
