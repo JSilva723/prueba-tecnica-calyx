@@ -14,6 +14,7 @@ services:
       - PASSWORD=odoo
       - PYTHONDONTWRITEBYTECODE=1
     volumes:
+      - ./addons:/mnt/extra-addons:cached
       - ./odoo-data:/mnt/odoo-data:cached
       - ./config/odoo.conf:/etc/odoo/odoo.conf:cached
       - /dev/shm:/dev/shm
