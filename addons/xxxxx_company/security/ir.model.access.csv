@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_xxxxx_company_channels_of_sale,xxxxx_company.channels_of_sale,model_xxxxx_company_channels_of_sale,base.group_user,1,1,1,1
+access_xxxxx_company_sale_channel,xxxxx_company.sale_channel,model_xxxxx_company_sale_channel,base.group_user,1,1,1,1

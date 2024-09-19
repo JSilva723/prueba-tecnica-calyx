@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="xxxxx_company.seq_channels_of_sale" model="ir.sequence">
-        <field name="name">Channels of Sale Sequence</field>
-        <field name="code">xxxxx_company.channels_of_sale</field>
+    <record model="ir.sequence" id="xxxxx_company.sale_channel_seq">
+        <field name="name">Sale Channel Sequence</field>
+        <field name="code">xxxxx_company.sale_channel</field>
         <field name="prefix">CH</field>
         <field name="padding">6</field>
         <field name="number_next">1</field>

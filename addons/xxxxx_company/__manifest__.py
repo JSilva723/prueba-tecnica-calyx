@@ -15,8 +15,8 @@
     ],
     'data': [
         'security/ir.model.access.csv',
-        'data/channels_of_sale_sequence.xml',
-        'views/channels.xml',
+        'data/sale_channel_sequence.xml',
+        'views/sale_channel.xml',
         'views/sale_order.xml',
     ],
     'demo': [],

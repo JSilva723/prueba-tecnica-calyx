@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api, _
 
-class ChannelsOfSale(models.Model):
-    _name = 'xxxxx_company.channels_of_sale'
-    _description = 'xxxxx_company.channels_of_sale'
+class SaleChannel(models.Model):
+    _name = 'xxxxx_company.sale_channel'
+    _description = 'xxxxx_company.sale_channel'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string=_('Name'), required=True, track_visibility='onchange')
@@ -14,5 +14,5 @@ class ChannelsOfSale(models.Model):
     @api.model
     def create(self, vals):
         if vals.get('code', 'New') == 'New':
-            vals['code'] = self.env['ir.sequence'].next_by_code('xxxxx_company.channels_of_sale') or 'New'
+            vals['code'] = self.env['ir.sequence'].next_by_code('xxxxx_company.sale_channel') or 'New'
         return super(ChannelsOfSale, self).create(vals)
