@@ -7,11 +7,12 @@
     'category': 'Uncategorized',
     'version': '0.1',
     'depends': [
+        'account',
         'base',
+        'l10n_ar',
+        'sale_management',
         'sale',
         'stock',
-        'account',
-        'l10n_ar',
     ],
     'data': [
         'security/ir.model.access.csv',
@@ -21,4 +22,5 @@
     ],
     'demo': [],
     'application': True,
+    'installable': True,
 }

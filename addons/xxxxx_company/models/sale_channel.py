@@ -15,4 +15,4 @@ class SaleChannel(models.Model):
     def create(self, vals):
         if vals.get('code', 'New') == 'New':
             vals['code'] = self.env['ir.sequence'].next_by_code('xxxxx_company.sale_channel') or 'New'
-        return super(ChannelsOfSale, self).create(vals)
+        return super(SaleChannel, self).create(vals)
