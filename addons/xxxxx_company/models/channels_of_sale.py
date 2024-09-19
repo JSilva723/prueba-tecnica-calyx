@@ -7,7 +7,8 @@ class ChannelsOfSale(models.Model):
 
     name = fields.Char(string=_('Name'), required=True)
     code = fields.Char(string=_('Code'), readonly=True, copy=False, default='New')
-    warehouse_id = fields.Many2one("stock.warehouse", string=_('Warehouse'))
+    warehouse_id = fields.Many2one('stock.warehouse', string=_('Warehouse'))
+    account_journal_id = fields.Many2one('account.journal', string=_('Journal'))
 
     @api.model
     def create(self, vals):
