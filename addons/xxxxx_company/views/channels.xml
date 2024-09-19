@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="xxxxx_company.channels_of_sale_tree_view">
+            <field name="name">channels.of.sale.tree.view</field>
+            <field name="model">xxxxx_company.channels_of_sale</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="xxxxx_company.channels_of_sale_form_view">
+            <field name="name">channels.of.sale.form.view</field>
+            <field name="model">xxxxx_company.channels_of_sale</field>
+            <field name="arch" type="xml">
+                <form string="Channels of Sale">
+                    <group>
+                        <field name="code" readonly="1"/>
+                        <field name="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="xxxxx_company.channels_of_sale_action_window">
+            <field name="name">Channels of sale</field>
+            <field name="res_model">xxxxx_company.channels_of_sale</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Channels of sale" id="xxxxx_company.menu_channels_of_sale" parent="sale.menu_sale_config" action="xxxxx_company.channels_of_sale_action_window"/>
+    </data>
+</odoo>

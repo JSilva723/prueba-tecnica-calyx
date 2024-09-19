@@ -6,11 +6,14 @@
     'website': "https://www.linkedin.com/in/jsilva723",
     'category': 'Uncategorized',
     'version': '0.1',
-    'depends': ['base'],
+    'depends': [
+        'base',
+        'sale',
+    ],
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/ir.model.access.csv',
+        'data/channels_of_sale_sequence.xml',
+        'views/channels.xml',
     ],
     'demo': [],
     'application': True,
