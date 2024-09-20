@@ -29,7 +29,7 @@
             <field name="inherit_id" ref="account.view_account_invoice_filter" />
             <field name="arch" type="xml">
                 <xpath expr="//search/group/filter[@name='status']" position="after">
-                    <filter string="Sales Channel" name="channel_id" domain="[('channel_id', '!=', False)]"/>
+                    <filter string="Sales channel" name="channel_id" domain="[('channel_id', '!=', False)]"/>
                 </xpath>
             </field>
         </record>
