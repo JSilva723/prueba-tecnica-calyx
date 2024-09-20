@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <record model="ir.ui.view" id="calyx_technical_test.sale_channel_tree_view">
-            <field name="name">channels.of.sale.tree.view</field>
+            <field name="name">calyx_technical_test.sale.channel.tree.view</field>
             <field name="model">calyx_technical_test.sale_channel</field>
             <field name="arch" type="xml">
                 <tree>
@@ -15,7 +15,7 @@
         </record>
 
         <record model="ir.ui.view" id="calyx_technical_test.sale_channel_form_view">
-            <field name="name">channels.of.sale.form.view</field>
+            <field name="name">calyx_technical_test.sale.channel.form.view</field>
             <field name="model">calyx_technical_test.sale_channel</field>
             <field name="arch" type="xml">
                 <form string="Channels of Sale">

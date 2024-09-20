@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_calyx_technical_test_sale_channel,calyx_technical_test.sale_channel,model_calyx_technical_test_sale_channel,base.group_user,1,1,1,1
+calyx_technical_test.access_calyx_technical_test_credit_group,access_calyx_technical_test_credit_group,calyx_technical_test.model_calyx_technical_test_credit_group,base.group_user,1,1,1,1

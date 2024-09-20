@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="calyx_technical_test.credit_group_tree_view">
+            <field name="name">calyx_technical_test.credit.group.tree.view</field>
+            <field name="model">calyx_technical_test.credit_group</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="calyx_technical_test.credit_group_form_view">
+            <field name="name">calyx_technical_test.credit.group.form.view</field>
+            <field name="model">calyx_technical_test.credit_group</field>
+            <field name="arch" type="xml">
+                <form string="Channels of Sale">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="calyx_technical_test.credit_group_action_window">
+            <field name="name">Credit gropus</field>
+            <field name="res_model">calyx_technical_test.credit_group</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Credit gropus" id="calyx_technical_test.menu_credit_group" parent="sale.menu_sale_config" action="calyx_technical_test.credit_group_action_window"/>
+    </data>
+</odoo>
