@@ -26,7 +26,6 @@
         <record model="ir.ui.view" id="xxxxx_company.sale_view_sales_order_filter_inherit">
             <field name="name">xxxxx_company.sale.view.sales.order.filter.inherit</field>
             <field name="model">sale.order</field>
-            <field name="mode">primary</field>
             <field name="inherit_id" ref="sale.view_sales_order_filter" />
             <field name="arch" type="xml">
                 <filter name="my_sale_orders_filter" position="after">
