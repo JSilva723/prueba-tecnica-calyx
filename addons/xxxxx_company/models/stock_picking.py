@@ -4,15 +4,17 @@ from odoo import models, fields, _, api
 class StockPicking(models.Model):
     _inherit = 'stock.picking'
 
-    channel_id = fields.Many2one(comodel_name='xxxxx_company.sale_channel', string=_('Sale channel'), compute='_compute_channel_id')
+    channel_id = fields.Many2one(comodel_name='xxxxx_company.sale_channel', string=_('Sale channel'))
 
-    @api.depends('origin')
-    def _compute_channel_id(self):
+    @api.model_create_multi
+    def create(self, vals_list):
+        res = super(StockPicking, self).create(vals_list)
+
         SaleOrder = self.env['sale.order'].sudo()
-        for rec in self:
-            channel_id = False
+        for rec in res:
             if rec.origin:
                 sale_order_id = SaleOrder.search([('name', '=', rec.origin)])
                 if sale_order_id and sale_order_id.channel_id:
-                    channel_id = sale_order_id.channel_id.id
-            rec.channel_id = channel_id
+                    rec.channel_id = sale_order_id.channel_id
+
+        return res
