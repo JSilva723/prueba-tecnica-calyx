@@ -9,7 +9,7 @@
                     <field name="code"/>
                     <field name="name"/>
                     <field name="warehouse_id"/>
-                    <field name="account_journal_id"/>
+                    <field name="journal_id"/>
                 </tree>
             </field>
         </record>
@@ -24,7 +24,7 @@
                             <field name="code" readonly="1"/>
                             <field name="name"/>
                             <field name="warehouse_id"/>
-                            <field name="account_journal_id"/>
+                            <field name="journal_id"/>
                         </group>
                     </sheet>
                     <div class="oe_chatter">
