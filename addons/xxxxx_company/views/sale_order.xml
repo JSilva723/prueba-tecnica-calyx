@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='partner_id']" position="after">
-                    <field name="channel_id" options="{'no_open': True}" create="false"/>
+                    <field name="channel_id" options="{'no_create': True, 'no_create_edit': True}"/>
                 </xpath>
             </field>
         </record>
@@ -28,9 +28,15 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_sales_order_filter" />
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="channel_id"/>
+                </xpath>
                 <xpath expr="//filter[@name='my_sale_orders_filter']" position="before">
-                    <filter string="Sales channel" name="channel_id" domain="[('channel_id', '!=', False)]"/>
+                    <filter string="Has sales channel" name="filter_channel_id" domain="[('channel_id', '!=', False)]"/>
                     <separator/>
+                </xpath>
+                <xpath expr="//group" position="inside">
+                    <filter string="Channel" name="group_channel_id" context="{'group_by':'channel_id'}"/>
                 </xpath>
             </field>
         </record>
