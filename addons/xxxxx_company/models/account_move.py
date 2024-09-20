@@ -4,7 +4,7 @@ from odoo import models, fields, _, api
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
-    channel_id = fields.Many2one(comodel_name='xxxxx_company.sale_channel', string=_('Sale channel'), required=True)
+    channel_id = fields.Many2one(comodel_name='xxxxx_company.sale_channel', string=_('Sale channel'))
 
     @api.model_create_multi
     def create(self, vals_list):
