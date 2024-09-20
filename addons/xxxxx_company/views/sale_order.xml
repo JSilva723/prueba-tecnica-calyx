@@ -4,12 +4,35 @@
         <record model="ir.ui.view" id="xxxxx_company.sale_view_order_form_inherit">
             <field name="name">xxxxx_company.sale.view.order.form.inherit</field>
             <field name="model">sale.order</field>
-            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='partner_id']" position="after">
                     <field name="channel_id" options="{'no_open': True}" create="false"/>
                 </xpath>
             </field>
         </record>
+        <record model="ir.ui.view" id="xxxxx_company.sale_view_quotation_tree_with_onboarding_inherit">
+            <field name="name">xxxxx_company.sale.view.quotation.tree.with.onboarding.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_status']" position="after">
+                    <field name="channel_id"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="xxxxx_company.sale_view_sales_order_filter_inherit">
+            <field name="name">xxxxx_company.sale.view.sales.order.filter.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="mode">primary</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter" />
+            <field name="arch" type="xml">
+                <filter name="my_sale_orders_filter" position="after">
+                    <filter string="Sales Channel" name="channel_id" domain="[('channel_id', '!=', False)]"/>
+                    <field name="channel_id"/>
+                </filter>
+            </field>
+        </record>
     </data>
 </odoo>
+
