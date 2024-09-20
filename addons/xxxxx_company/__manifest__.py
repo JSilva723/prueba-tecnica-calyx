@@ -18,6 +18,7 @@
         'security/ir.model.access.csv',
         'data/sale_channel_sequence.xml',
         'views/sale_channel.xml',
+        'views/stock_picking.xml',
         'views/sale_order.xml',
         'views/account_move.xml',
     ],
