@@ -23,8 +23,8 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="xxxxx_company.sale_view_sales_order_filter_inherit">
-            <field name="name">xxxxx_company.sale.view.sales.order.filter.inherit</field>
+        <record model="ir.ui.view" id="xxxxx_company.account_view_account_invoice_filter_inherit">
+            <field name="name">xxxxx_company.account.view.account.invoice.filter.inherit</field>
             <field name="model">account.move</field>
             <field name="inherit_id" ref="account.view_account_invoice_filter" />
             <field name="arch" type="xml">
@@ -36,7 +36,7 @@
 
         <record model="ir.actions.act_window" id="xxxxx_company.account_move_action_inherit" >
             <field name="res_model">account.move</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree</field>
             <field name="context">{'group_by': 'channel_id'}</field>
         </record>
     </data>

@@ -11,5 +11,33 @@
                 </xpath>
             </field>
         </record>
+
+        <record model="ir.ui.view" id="xxxxx_company.stock_vpicktree_inherit">
+            <field name="name">xxxxx_company.stock.vpicktree.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="channel_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="xxxxx_company.stock_view_picking_internal_search">
+            <field name="name">xxxxx_company.stock.view.picking.internal.search</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_internal_search" />
+            <field name="arch" type="xml">
+                <filter name="picking_type" position="after">
+                    <filter string="Sales Channel" name="channel_id" domain="[('channel_id', '!=', False)]"/>
+                </filter>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="xxxxx_company.stock_picking_action_inherit" >
+            <field name="res_model">account.move</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{'group_by': 'channel_id'}</field>
+        </record>
     </data>
 </odoo>
