@@ -1,19 +1,19 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <data>
-        <record model="ir.ui.view" id="xxxxx_company.sale_view_order_form_inherit">
-            <field name="name">xxxxx_company.sale.view.order.form.inherit</field>
+        <record model="ir.ui.view" id="calyx_technical_test.sale_view_order_form_inherit">
+            <field name="name">calyx_technical_test.sale.view.order.form.inherit</field>
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='partner_id']" position="after">
-                    <field name="channel_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                    <field name="channel_id" options="{'no_create': True, 'no_create_edit': True}" attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
                 </xpath>
             </field>
         </record>
 
-        <record model="ir.ui.view" id="xxxxx_company.sale_view_quotation_tree_with_onboarding_inherit">
-            <field name="name">xxxxx_company.sale.view.quotation.tree.with.onboarding.inherit</field>
+        <record model="ir.ui.view" id="calyx_technical_test.sale_view_quotation_tree_with_onboarding_inherit">
+            <field name="name">calyx_technical_test.sale.view.quotation.tree.with.onboarding.inherit</field>
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
             <field name="arch" type="xml">
@@ -23,8 +23,8 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="xxxxx_company.sale_view_sales_order_filter_inherit">
-            <field name="name">xxxxx_company.sale.view.sales.order.filter.inherit</field>
+        <record model="ir.ui.view" id="calyx_technical_test.sale_view_sales_order_filter_inherit">
+            <field name="name">calyx_technical_test.sale.view.sales.order.filter.inherit</field>
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_sales_order_filter" />
             <field name="arch" type="xml">

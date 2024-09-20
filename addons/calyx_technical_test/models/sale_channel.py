@@ -2,8 +2,8 @@
 from odoo import models, fields, api, _
 
 class SaleChannel(models.Model):
-    _name = 'xxxxx_company.sale_channel'
-    _description = 'xxxxx_company.sale_channel'
+    _name = 'calyx_technical_test.sale_channel'
+    _description = 'calyx_technical_test.sale_channel'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string=_('Name'), required=True, track_visibility='onchange')
@@ -14,5 +14,5 @@ class SaleChannel(models.Model):
     @api.model
     def create(self, vals):
         if vals.get('code', 'New') == 'New':
-            vals['code'] = self.env['ir.sequence'].next_by_code('xxxxx_company.sale_channel') or 'New'
+            vals['code'] = self.env['ir.sequence'].next_by_code('calyx_technical_test.sale_channel') or 'New'
         return super(SaleChannel, self).create(vals)

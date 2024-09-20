@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "xxxxx_company",
+    'name': "calyx_technical_test",
     'summary': "system to manage different sales channels in order to control the sales made",
     'author': "Jonatan Silva",
     'website': "https://www.linkedin.com/in/jsilva723",

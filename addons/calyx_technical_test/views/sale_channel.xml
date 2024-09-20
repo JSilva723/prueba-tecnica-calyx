@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <data>
-        <record model="ir.ui.view" id="xxxxx_company.sale_channel_tree_view">
+        <record model="ir.ui.view" id="calyx_technical_test.sale_channel_tree_view">
             <field name="name">channels.of.sale.tree.view</field>
-            <field name="model">xxxxx_company.sale_channel</field>
+            <field name="model">calyx_technical_test.sale_channel</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="code"/>
@@ -14,9 +14,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="xxxxx_company.sale_channel_form_view">
+        <record model="ir.ui.view" id="calyx_technical_test.sale_channel_form_view">
             <field name="name">channels.of.sale.form.view</field>
-            <field name="model">xxxxx_company.sale_channel</field>
+            <field name="model">calyx_technical_test.sale_channel</field>
             <field name="arch" type="xml">
                 <form string="Channels of Sale">
                     <sheet>
@@ -34,12 +34,12 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="xxxxx_company.sale_channel_action_window">
+        <record model="ir.actions.act_window" id="calyx_technical_test.sale_channel_action_window">
             <field name="name">Sales channels</field>
-            <field name="res_model">xxxxx_company.sale_channel</field>
+            <field name="res_model">calyx_technical_test.sale_channel</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem name="Sales channels" id="xxxxx_company.menu_sale_channel" parent="sale.menu_sale_config" action="xxxxx_company.sale_channel_action_window"/>
+        <menuitem name="Sales channels" id="calyx_technical_test.menu_sale_channel" parent="sale.menu_sale_config" action="calyx_technical_test.sale_channel_action_window"/>
     </data>
 </odoo>
