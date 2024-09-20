@@ -19,6 +19,7 @@
         'data/sale_channel_sequence.xml',
         'views/sale_channel.xml',
         'views/sale_order.xml',
+        'views/account_move.xml',
     ],
     'demo': [],
     'application': True,
