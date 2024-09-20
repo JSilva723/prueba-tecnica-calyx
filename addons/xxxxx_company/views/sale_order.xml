@@ -11,6 +11,7 @@
                 </xpath>
             </field>
         </record>
+
         <record model="ir.ui.view" id="xxxxx_company.sale_view_quotation_tree_with_onboarding_inherit">
             <field name="name">xxxxx_company.sale.view.quotation.tree.with.onboarding.inherit</field>
             <field name="model">sale.order</field>
@@ -21,6 +22,7 @@
                 </xpath>
             </field>
         </record>
+
         <record model="ir.ui.view" id="xxxxx_company.sale_view_sales_order_filter_inherit">
             <field name="name">xxxxx_company.sale.view.sales.order.filter.inherit</field>
             <field name="model">sale.order</field>
@@ -32,6 +34,12 @@
                     <field name="channel_id"/>
                 </filter>
             </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="xxxxx_company.sale_order_action_inherit" >
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'group_by': 'channel_id'}</field>
         </record>
     </data>
 </odoo>
