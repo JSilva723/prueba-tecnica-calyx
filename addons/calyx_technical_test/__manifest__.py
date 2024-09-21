@@ -17,6 +17,8 @@
     'data': [
         'security/ir.model.access.csv',
         'data/sale_channel_sequence.xml',
+        'reports/credit_group_report_template.xml',
+        'reports/credit_group_report.xml',
         'views/sale_channel.xml',
         'views/credit_group.xml',
         'views/stock_picking.xml',

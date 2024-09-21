@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <report 
+        id="credit_group_report"
+        model="calyx_technical_test.credit_group"
+        string="Credit Group Report"
+        report_type="qweb-pdf"
+        name="calyx_technical_test.credit_group_report_template"
+        file="calyx_technical_test.credit_group_report_template"
+        print_report_name="'Credit Group Report - %s' % (object.name)"
+    />
+</odoo>
