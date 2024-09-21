@@ -1,17 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <data>
-        <record model="ir.ui.view" id="calyx_technical_test.sale_view_order_form_inherit">
-            <field name="name">calyx_technical_test.sale.view.order.form.inherit</field>
-            <field name="model">sale.order</field>
-            <field name="inherit_id" ref="sale.view_order_form"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='partner_id']" position="after">
-                    <field name="channel_id" options="{'no_create': True, 'no_create_edit': True}" attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
-                </xpath>
-            </field>
-        </record>
-
         <record model="ir.ui.view" id="calyx_technical_test.sale_view_quotation_tree_with_onboarding_inherit">
             <field name="name">calyx_technical_test.sale.view.quotation.tree.with.onboarding.inherit</field>
             <field name="model">sale.order</field>
@@ -19,6 +8,17 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='invoice_status']" position="after">
                     <field name="channel_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="calyx_technical_test.sale_view_order_form_inherit">
+            <field name="name">calyx_technical_test.sale.view.order.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="channel_id" options="{'no_create': True, 'no_create_edit': True}" attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
                 </xpath>
             </field>
         </record>
