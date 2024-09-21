@@ -12,6 +12,7 @@
                     <field name="company_currency_id" invisible="1"/>
                     <field name="credit_global"/>
                     <field name="credit_used"/>
+                    <field name="credit_available"/>
                 </tree>
             </field>
         </record>
@@ -29,6 +30,7 @@
                             <field name="company_currency_id" invisible="1"/>
                             <field name="credit_global" widget="monetary" options="{'currency_field': 'company_currency_id'}"/>
                             <field name="credit_used" widget="monetary" options="{'currency_field': 'company_currency_id'}"/>
+                            <field name="credit_available" widget="monetary" options="{'currency_field': 'company_currency_id'}"/>
                         </group>
                     </sheet>
                 </form>

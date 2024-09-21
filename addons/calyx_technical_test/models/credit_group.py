@@ -17,6 +17,7 @@ class CreditGruop(models.Model):
     company_currency_id = fields.Many2one(comodel_name='res.currency', string=_('Company Coin'), related='company_id.currency_id', readonly=True, store=True)
     credit_global = fields.Monetary(string=_('Global credit'), currency_field='company_currency_id', required=True)
     credit_used = fields.Monetary(string=_('Credit used'), compute='_compute_credit_used', currency_field='company_currency_id')
+    credit_available = fields.Monetary(string=_('Credit available'), compute='_compute_credit_available', currency_field='company_currency_id')
 
     @api.constrains('code')
     def _check_code_restriction(self):
@@ -59,3 +60,8 @@ class CreditGruop(models.Model):
                     total_not_paid_invoices += invoice.amount_residual
 
             rec.credit_used = total_sales + total_not_paid_invoices
+
+    @api.depends('credit_global', 'credit_used')
+    def _compute_credit_available(self):
+        for record in self:
+            record.credit_available = record.credit_global - record.credit_used
