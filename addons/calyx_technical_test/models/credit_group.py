@@ -26,7 +26,7 @@ class CreditGruop(models.Model):
                 raise ValidationError('The code cannot contain the sequence 026.')
 
     def _get_customers_ids(self):
-        customers = self.env['res.partner'].search([('credit_group_id', '=', self.id)])
+        customers = self.env['res.partner'].search([('credit_group_ids', '=', self.id)])
         return customers.ids
     
     @api.depends('channel_id')
