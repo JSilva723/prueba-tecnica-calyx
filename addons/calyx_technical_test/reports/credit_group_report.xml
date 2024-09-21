@@ -7,6 +7,6 @@
         report_type="qweb-pdf"
         name="calyx_technical_test.credit_group_report_template"
         file="calyx_technical_test.credit_group_report_template"
-        print_report_name="'Credit Group Report - %s' % (object.name)"
+        print_report_name="'%s' % (object.name)"
     />
 </odoo>

@@ -78,6 +78,8 @@ class CreditGruop(models.Model):
             partners_data.append({
                 'name': partner.name,
                 'document_number': partner.vat,
+                'phone': partner.phone if partner.phone else '--',
+                'email': partner.email if partner.email else '--',
             })
         
         sale_orders_data = []
