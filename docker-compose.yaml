@@ -1,6 +1,6 @@
 services:
   web:
-    image: odoo:16.0
+    image: odoo:15.0
     container_name: calyx-odoo
     depends_on:
       - db
