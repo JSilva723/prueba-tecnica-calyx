@@ -13,7 +13,7 @@ class CreditGruop(models.Model):
     name = fields.Char(string=_('Name'), required=True)
     code = fields.Char(string=_('Code'), required=True)
     channel_id = fields.Many2one(comodel_name='calyx_technical_test.sale_channel', string=_('Sale channel'), required=True)
-    company_id = fields.Many2one('res.company', string=_('Company'), required=True, default=lambda self: self.env.company)
+    company_id = fields.Many2one(comodel_name='res.company', string=_('Company'), required=True, default=lambda self: self.env.company)
     company_currency_id = fields.Many2one(comodel_name='res.currency', string=_('Company Coin'), related='company_id.currency_id', readonly=True, store=True)
     credit_global = fields.Monetary(string=_('Global credit'), currency_field='company_currency_id', required=True)
     credit_used = fields.Monetary(string=_('Credit used'), compute='_compute_credit_used', currency_field='company_currency_id')
