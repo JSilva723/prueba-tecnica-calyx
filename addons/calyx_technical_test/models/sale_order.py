@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, _, api
+from odoo.exceptions import ValidationError
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
@@ -45,3 +46,9 @@ class SaleOrder(models.Model):
         res = super(SaleOrder, self).write(vals)
         self._check_credit_status()
         return res
+
+    def action_confirm(self):
+        for order in self:
+            if order.credit_status == 'blocked':
+                raise ValidationError(_('You cannot confirm the sale order because the customer\'s credit is blocked.'))
+        return super(SaleOrder, self).action_confirm()
