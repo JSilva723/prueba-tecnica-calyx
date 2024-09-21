@@ -22,6 +22,7 @@
         'views/stock_picking.xml',
         'views/sale_order.xml',
         'views/account_move.xml',
+        'views/res_partner.xml',
     ],
     'demo': [],
     'application': True,
