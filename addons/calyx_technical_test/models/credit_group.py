@@ -51,13 +51,14 @@ class CreditGruop(models.Model):
                 else:
                     total_sales += order.amount_total
 
-            unpaid_not_paid_invoices = self.env['account.move'].search([
+            not_paid_invoices = self.env['account.move'].search([
                 ('state', '=', 'posted'),
                 ('payment_state', 'in', ['not_paid']),
+                ('channel_id', '=', rec.channel_id.id),
                 ('partner_id', 'in', rec.partner_ids.ids)
             ])
 
-            for invoice in unpaid_not_paid_invoices:
+            for invoice in not_paid_invoices:
                 if invoice.currency_id != rec.company_currency_id:
                     total_not_paid_invoices += invoice.currency_id._convert(invoice.amount_residual, rec.company_currency_id, rec.company_id, invoice.invoice_date)
                 else:
@@ -81,9 +82,12 @@ class CreditGruop(models.Model):
                 'phone': partner.phone if partner.phone else '--',
                 'email': partner.email if partner.email else '--',
             })
-        
+
         sale_orders_data = []
-        sale_orders = self.env['sale.order'].search([('partner_id', 'in', self.partner_ids.ids), ('state', '=', 'sale')])
+        sale_orders = self.env['sale.order'].search([
+            ('partner_id', 'in', self.partner_ids.ids),
+            ('state', '=', 'sale')
+        ])
         for order in sale_orders:
             sale_orders_data.append({
                 'name': order.name,
