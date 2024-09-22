@@ -16,6 +16,6 @@ class AccountMove(models.Model):
         # If journal exist in channel and type is sale, set journal in invoice
         journal_id = channel_id.journal_id
         if journal_id and journal_id.type == 'sale': 
-            res.journal_id = journal_id
+            res.journal_id = journal_id.id
 
         return res
