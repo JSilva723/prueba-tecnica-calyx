@@ -16,6 +16,12 @@ class ResPartner(models.Model):
 
     @api.constrains('credit_control', 'credit_group_ids')
     def _check_credit_group(self):
-        for partner in self:
-            if partner.credit_control and not partner.credit_group_ids:
+        for rec in self:
+            if rec.credit_control and not rec.credit_group_ids:
                 raise ValidationError('You must assign at least one credit group if credit control is enabled.')
+
+    @api.onchange('credit_control')
+    def remove_credit_group_ids(self):
+        for rec in self:
+            if not rec.credit_control:
+                rec.credit_group_ids = None
