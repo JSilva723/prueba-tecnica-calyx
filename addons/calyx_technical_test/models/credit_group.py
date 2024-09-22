@@ -7,7 +7,7 @@ class CreditGruop(models.Model):
     _description = 'calyx_technical_test.credit_group'
 
     _sql_constraints = [
-        ('code_unique', 'unique(code)', 'The code must be unique.')
+        ('code_unique', 'unique(code)', _('The code must be unique.'))
     ]
 
     name = fields.Char(string=_('Name'), required=True)
@@ -31,7 +31,7 @@ class CreditGruop(models.Model):
     def _check_code_restriction(self):
         for rec in self:
             if '026' in rec.code:
-                raise ValidationError('The code cannot contain the sequence 026.')
+                raise ValidationError(_('The code cannot contain the sequence 026.'))
 
     @api.depends('channel_id')
     def _compute_credit_used(self):

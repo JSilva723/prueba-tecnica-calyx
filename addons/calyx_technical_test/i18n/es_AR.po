@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0-20240912\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-22 00:22+0000\n"
-"PO-Revision-Date: 2024-09-22 00:22+0000\n"
+"POT-Creation-Date: 2024-09-22 16:25+0000\n"
+"PO-Revision-Date: 2024-09-22 16:25+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -181,7 +181,10 @@ msgid "Credit used"
 msgstr "Crédito usado"
 
 #. module: calyx_technical_test
+#: code:addons/calyx_technical_test/models/credit_group.py:0
+#: model:ir.model.fields,field_description:calyx_technical_test.field_calyx_technical_test_credit_group__partner_ids
 #: model_terms:ir.ui.view,arch_db:calyx_technical_test.credit_group_report_template
+#, python-format
 msgid "Customers"
 msgstr "Clientes"
 
@@ -492,7 +495,15 @@ msgid "The channel must be number"
 msgstr "El canal debe ser el número"
 
 #. module: calyx_technical_test
+#: code:addons/calyx_technical_test/models/credit_group.py:0
+#, python-format
+msgid "The code cannot contain the sequence 026."
+msgstr "El código no puede contener la secuencia 026."
+
+#. module: calyx_technical_test
+#: code:addons/calyx_technical_test/models/credit_group.py:0
 #: model:ir.model.constraint,message:calyx_technical_test.constraint_calyx_technical_test_credit_group_code_unique
+#, python-format
 msgid "The code must be unique."
 msgstr "El código debe ser único."
 
@@ -550,7 +561,16 @@ msgstr "Historial de comunicación del sitio web"
 msgid ""
 "You cannot confirm the sale order because the customer's credit is blocked."
 msgstr ""
-"No se puede confirmar la orden de venta porque el crédito del cliente está bloqueado."
+"No se puede confirmar la orden de venta porque el crédito del cliente está "
+"bloqueado."
+
+#. module: calyx_technical_test
+#: code:addons/calyx_technical_test/models/res_partner.py:0
+#, python-format
+msgid ""
+"You must assign at least one credit group if credit control is enabled."
+msgstr ""
+"Debe asignar al menos un grupo de crédito si el control de crédito está habilitado."
 
 #. module: calyx_technical_test
 #: model:ir.model,name:calyx_technical_test.model_calyx_technical_test_credit_group
