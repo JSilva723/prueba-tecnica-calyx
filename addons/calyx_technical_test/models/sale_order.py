@@ -12,16 +12,21 @@ class SaleOrder(models.Model):
     ]
 
     channel_id = fields.Many2one(comodel_name='calyx_technical_test.sale_channel', string=_('Sale channel'), required=True)
-    credit_status = fields.Selection(selection=_CREDIT_STATUS, string=_('Credit'), default='no_limit', readonly=True)
+    credit_status = fields.Selection(
+        selection=_CREDIT_STATUS,
+        string=_('Credit'),
+        compute='_check_credit_status',
+        default='no_limit',
+        readonly=True,
+    )
 
     @api.onchange('channel_id')
     def _onchange_channel_id(self):
         self.warehouse_id = self.channel_id.warehouse_id
  
-    @api.onchange('partner_id', 'channel_id', 'order_line')
+    @api.depends('partner_id', 'channel_id', 'order_line')
     def _check_credit_status(self):
-        old_status = self.credit_status
-        new_status = 'no_limit'
+        self.credit_status = 'no_limit'
 
         if self.partner_id and self.channel_id:
             # Filter groups by channel
@@ -36,16 +41,7 @@ class SaleOrder(models.Model):
                         is_available = True
                         break
 
-                new_status = 'available' if is_available else 'blocked'
-
-        # Prevent loop in write
-        if old_status != new_status:      
-            self.credit_status = new_status
-
-    def write(self, vals):
-        res = super(SaleOrder, self).write(vals)
-        self._check_credit_status()
-        return res
+                self.credit_status = 'available' if is_available else 'blocked'
 
     def action_confirm(self):
         for order in self:
