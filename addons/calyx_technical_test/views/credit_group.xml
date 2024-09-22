@@ -21,7 +21,7 @@
             <field name="name">calyx_technical_test.credit.group.form.view</field>
             <field name="model">calyx_technical_test.credit_group</field>
             <field name="arch" type="xml">
-                <form string="Channels of Sale">
+                <form>
                     <sheet>
                         <group>
                             <field name="name"/>

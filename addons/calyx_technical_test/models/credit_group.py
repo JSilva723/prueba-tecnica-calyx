@@ -24,7 +24,7 @@ class CreditGruop(models.Model):
         relation='res_partner_credit_group_rel',
         column1='credit_group_id',
         column2='partner_id',
-        string=_('Custmers'),
+        string=_('Customers'),
     )
 
     @api.constrains('code')

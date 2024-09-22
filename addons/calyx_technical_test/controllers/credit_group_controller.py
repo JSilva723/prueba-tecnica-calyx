@@ -34,7 +34,7 @@ class CreditGroupController(http.Controller):
                 try:
                     credit_global = float(credit_global)
                 except ValueError:
-                    return {'status': 400, 'message': _('The credit global most be number')}
+                    return {'status': 400, 'message': _('The credit global must be number')}
 
                 channel = group_data.get('channel', '')
                 if not channel:
@@ -42,7 +42,7 @@ class CreditGroupController(http.Controller):
                 try:
                     channel = int(channel)
                 except ValueError:
-                    return {'status': 400, 'message': _('The channel most be number')}
+                    return {'status': 400, 'message': _('The channel must be number')}
 
                 # Get channel
                 SaleChannel = http.request.env['calyx_technical_test.sale_channel'].sudo()
