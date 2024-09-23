@@ -363,6 +363,12 @@ msgid "Missing group name"
 msgstr "Falta nombre del grupo"
 
 #. module: calyx_technical_test
+#: code:addons/calyx_technical_test/controllers/credit_group_controller.py:0
+#, python-format
+msgid "Channel not found (%s)"
+msgstr "Canal no encontrado (%s)"
+
+#. module: calyx_technical_test
 #: model:ir.model.fields,field_description:calyx_technical_test.field_calyx_technical_test_sale_channel__my_activity_date_deadline
 msgid "My Activity Deadline"
 msgstr "Fecha límite de mi actividad"

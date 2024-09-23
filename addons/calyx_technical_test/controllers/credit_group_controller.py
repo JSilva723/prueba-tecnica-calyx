@@ -2,19 +2,18 @@
 import json
 import logging
 from odoo import http, _
-from odoo.http import request
 
 log = logging.getLogger(__name__)
 
 class CreditGroupController(http.Controller):
 
     @http.route('/create_edit_credit_group', type='json', auth='public', methods=['POST'], csrf=False)
-    def create_edit_credit_group(self):
+    def create_edit_credit_group(self, request):
         try:
-            body = http.request.jsonrequest
+            body = request.jsonrequest
             if not body:
                 return  {'status': 400, 'message': _('Invalid JSON format')}
-            
+
             credit_groups = body['credit_groups']
             if not credit_groups or not isinstance(credit_groups, list):
                 return  {'status': 400, 'message': _('Invalid JSON format')}
@@ -45,13 +44,13 @@ class CreditGroupController(http.Controller):
                     return {'status': 400, 'message': _('The channel must be number')}
 
                 # Get channel
-                SaleChannel = http.request.env['calyx_technical_test.sale_channel'].sudo()
+                SaleChannel = request.env['calyx_technical_test.sale_channel'].sudo()
                 channel_id = SaleChannel.search([('id', '=', channel)])
                 if not channel_id:
-                    return  {'status': 404, 'message': _(f'Channel not found ({channel})')}
+                    return  {'status': 404, 'message': _('Channel not found (%s)', channel)}
 
                 # Get credit grup
-                CreditGroup = http.request.env['calyx_technical_test.credit_group'].sudo()
+                CreditGroup = request.env['calyx_technical_test.credit_group'].sudo()
                 credit_group_id = CreditGroup.search([('code', '=', code)])
 
                 group = {
