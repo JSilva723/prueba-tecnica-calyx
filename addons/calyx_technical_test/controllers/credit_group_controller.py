@@ -8,11 +8,14 @@ log = logging.getLogger(__name__)
 class CreditGroupController(http.Controller):
 
     @http.route('/create_edit_credit_group', type='json', auth='public', methods=['POST'], csrf=False)
-    def create_edit_credit_group(self, request):
+    def create_edit_credit_group(self, request, **context):
         try:
             body = request.jsonrequest
             if not body:
                 return  {'status': 400, 'message': _('Invalid JSON format')}
+
+            lang = body.get('lang', 'en_US')
+            context = {'lang': lang}
 
             credit_groups = body['credit_groups']
             if not credit_groups or not isinstance(credit_groups, list):
