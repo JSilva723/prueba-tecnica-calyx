@@ -1,10 +1,13 @@
-## Init
-1 - Create scaffold
+## Technnical test Calyx
+
+## Dev
 ```sh
-docker exec -it calyx-odoo /usr/bin/odoo scaffold calyx_technical_test /mnt/extra-addons
+make # start detach 
 ```
-2 - Fix permissions
 ```sh
-cd addons
-sudo chown -R $USER:$USER calyx_technical_test/
+make logs # server logs
 ```
+***
+## Requeriments
+ - Docker
+ - Docker compose 
