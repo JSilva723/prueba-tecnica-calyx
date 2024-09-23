@@ -5,6 +5,7 @@ class AccountMove(models.Model):
     _inherit = 'account.move'
 
     channel_id = fields.Many2one(comodel_name='calyx_technical_test.sale_channel', string=_('Sale channel'))
+    rel_journal_id = fields.Many2one(related='journal_id', string=_('Journal'))
 
     @api.model_create_multi
     def create(self, vals_list):

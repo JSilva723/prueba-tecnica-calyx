@@ -19,6 +19,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='partner_id']" position="after">
                     <field name="channel_id" readonly="1"/>
+                    <field name="rel_journal_id" readonly="1"/>
                 </xpath>
             </field>
         </record>

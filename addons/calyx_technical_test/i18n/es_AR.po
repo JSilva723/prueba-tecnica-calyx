@@ -294,7 +294,11 @@ msgid "Is Follower"
 msgstr "Es seguidor"
 
 #. module: calyx_technical_test
+#: code:addons/calyx_technical_test/models/account_move.py:0
 #: code:addons/calyx_technical_test/models/sale_channel.py:0
+#: model:ir.model.fields,field_description:calyx_technical_test.field_account_bank_statement_line__rel_journal_id
+#: model:ir.model.fields,field_description:calyx_technical_test.field_account_move__rel_journal_id
+#: model:ir.model.fields,field_description:calyx_technical_test.field_account_payment__rel_journal_id
 #: model:ir.model.fields,field_description:calyx_technical_test.field_calyx_technical_test_sale_channel__journal_id
 #, python-format
 msgid "Journal"
